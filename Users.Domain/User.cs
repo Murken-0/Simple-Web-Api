@@ -6,7 +6,7 @@ namespace Users.Domain
 		public Guid Id { get; set; }
 		public string Login { get; set; }
 		public string Password { get; set; }
-		public DateTime Created { get; set; }
+		public DateTime CreationTime { get; set; }
 		public Guid GroupId { get; set; }
         public UserGroup GroupRelation { get; set; }
 		public UserGroup.Group Group { get; set; }

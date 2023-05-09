@@ -20,9 +20,9 @@ namespace Users.Application.Users.Commands.CreateUser
 				Id = Guid.NewGuid(),
 				Login = request.Login,
 				Password = request.Password,
-				Created = DateTime.Now,
+				CreationTime = DateTime.Now,
 				GroupId = request.GroupId,
-				StateId = request.StateId
+				State = UserState.State.Active
 			};
 
 			await _dbContext.Users.AddAsync(user, cancellationToken);

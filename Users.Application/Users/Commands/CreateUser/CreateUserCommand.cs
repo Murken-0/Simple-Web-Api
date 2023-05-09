@@ -8,6 +8,5 @@ namespace Users.Application.Users.Commands.CreateUser
 		public string Login { get; set; }
         public string Password { get; set; }
         public Guid GroupId { get; set; }
-        public Guid StateId { get; set; }
     }
 }

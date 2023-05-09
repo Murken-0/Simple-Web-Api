@@ -29,7 +29,7 @@ namespace Users.Persistense.EntityTypeConfiguration
 			builder.Property(u => u.Password)
 				.HasColumnName("password")
 				.IsRequired();
-			builder.Property(u => u.Created)
+			builder.Property(u => u.CreationTime)
 				.HasColumnName("created_date")
 				.IsRequired();
 			builder.Property(u => u.GroupId)
