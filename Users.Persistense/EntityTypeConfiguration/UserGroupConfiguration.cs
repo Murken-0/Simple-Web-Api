@@ -8,6 +8,8 @@ namespace Users.Persistense.EntityTypeConfiguration
 	{
 		public void Configure(EntityTypeBuilder<UserGroup> builder)
 		{
+			builder.ToTable("user_group");
+
 			builder.HasKey(g => g.Id);
 			builder.HasIndex(g => g.Id).IsUnique();
 

@@ -8,13 +8,15 @@ namespace Users.Persistense.EntityTypeConfiguration
 	{
 		public void Configure(EntityTypeBuilder<User> builder)
 		{
+			builder.ToTable("user");
+
 			builder.HasKey(u => u.Id);
 			builder.HasIndex(u => u.Id).IsUnique();
 			
-			builder.HasOne(u => u.Group)
+			builder.HasOne(u => u.GroupRelation)
 				.WithMany(g => g.Users)
 				.HasForeignKey(u => u.GroupId);
-			builder.HasOne(u => u.State)
+			builder.HasOne(u => u.StateRelation)
 				.WithMany(g => g.Users)
 				.HasForeignKey(u => u.StateId);
 

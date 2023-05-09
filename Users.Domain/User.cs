@@ -8,8 +8,10 @@ namespace Users.Domain
 		public string Password { get; set; }
 		public DateTime Created { get; set; }
 		public Guid GroupId { get; set; }
-        public UserGroup Group { get; set; }
+        public UserGroup GroupRelation { get; set; }
+		public UserGroup.Group Group { get; set; }
 		public Guid StateId { get; set; }
-		public UserState State { get; set; }
+		public UserState StateRelation { get; set; }
+		public UserState.State State { get; set; }
     }
 }

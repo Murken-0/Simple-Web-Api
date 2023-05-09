@@ -8,6 +8,8 @@ namespace Users.Persistense.EntityTypeConfiguration
 	{
 		public void Configure(EntityTypeBuilder<UserState> builder)
 		{
+			builder.ToTable("user_state");
+
 			builder.HasKey(s => s.Id);
 			builder.HasIndex(s => s.Id).IsUnique();
 			
