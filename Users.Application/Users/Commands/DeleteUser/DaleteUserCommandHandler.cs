@@ -1,9 +1,7 @@
 ﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
 using Users.Application.Interfaces;
 using Users.Application.Common.Exceptions;
 using Users.Domain;
-using System.Net.Http.Headers;
 
 namespace Users.Application.Users.Commands.UpdateUser
 {
@@ -20,7 +18,7 @@ namespace Users.Application.Users.Commands.UpdateUser
 		{
 			var entity = await _dbContext.Users
 				.FindAsync(new object[] {request.Id}, cancellationToken);
-			if (entity == null || entity.GroupId != request.GroupId || entity.StateId != request.StateId) 
+			if (entity == null) 
 			{
 				throw new NotFoundException(nameof(User), request.Id);
 			}
