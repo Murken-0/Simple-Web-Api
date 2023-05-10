@@ -6,7 +6,7 @@ using Users.Application.Common.Exceptions;
 
 namespace Users.Application.Users.Queries.GetOneUser
 {
-	internal class GetOneUserQueryHandler : IRequestHandler<GetOneUserQuery, UserDto>
+	public class GetOneUserQueryHandler : IRequestHandler<GetOneUserQuery, UserDto>
 	{
 		private readonly IUsersDbContext _dbContext;
 

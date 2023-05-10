@@ -38,7 +38,7 @@ namespace Users.WebApi.Controllers
 		[HttpGet]
 		public async Task<ActionResult> Delete(int id)
 		{
-			var query = new DaleteUserCommand()
+			var query = new DeleteUserCommand()
 			{
 				Id = id
 			};
