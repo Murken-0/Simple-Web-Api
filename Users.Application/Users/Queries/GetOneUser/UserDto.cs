@@ -1,4 +1,4 @@
-﻿#nullable disable
+﻿
 namespace Users.Application.Users.Queries.GetOneUser
 {
     public class UserDto

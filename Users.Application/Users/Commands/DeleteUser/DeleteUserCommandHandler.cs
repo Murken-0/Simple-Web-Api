@@ -6,16 +6,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Users.Application.Users.Commands.DeleteUser
 {
-	public class DaleteUserCommandHandler : IRequestHandler<DaleteUserCommand>
+	public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand>
 	{
 		private readonly IUsersDbContext _dbContext;
 
-		public DaleteUserCommandHandler(IUsersDbContext dbContext)
+		public DeleteUserCommandHandler(IUsersDbContext dbContext)
 		{
 			_dbContext = dbContext;
 		}
 
-		public async Task Handle(DaleteUserCommand request, CancellationToken cancellationToken)
+		public async Task Handle(DeleteUserCommand request, CancellationToken cancellationToken)
 		{
 			var entity = await _dbContext.Users
 				.FindAsync(new object[] {request.Id}, cancellationToken);

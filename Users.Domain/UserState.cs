@@ -1,4 +1,4 @@
-﻿#nullable disable
+﻿
 namespace Users.Domain
 {
 	public class UserState
