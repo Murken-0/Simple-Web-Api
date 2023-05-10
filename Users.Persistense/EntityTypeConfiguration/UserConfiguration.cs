@@ -12,15 +12,18 @@ namespace Users.Persistense.EntityTypeConfiguration
 
 			builder.HasKey(u => u.Id);
 			builder.HasIndex(u => u.Id).IsUnique();
-			
-			builder.HasOne(u => u.GroupRelation)
+			builder.HasIndex(u => u.GroupId);
+			builder.HasIndex(u => u.StateId);
+
+			builder.HasOne(u => u.Group)
 				.WithMany(g => g.Users)
 				.HasForeignKey(u => u.GroupId);
-			builder.HasOne(u => u.StateRelation)
-				.WithMany(g => g.Users)
+			builder.HasOne(u => u.State)
+				.WithMany(s => s.Users)
 				.HasForeignKey(u => u.StateId);
 
 			builder.Property(u => u.Id)
+				.ValueGeneratedOnAdd()
 				.HasColumnName("id")
 				.IsRequired();
 			builder.Property(u => u.Login)

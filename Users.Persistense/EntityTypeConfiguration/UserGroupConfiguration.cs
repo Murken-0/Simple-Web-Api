@@ -12,8 +12,10 @@ namespace Users.Persistense.EntityTypeConfiguration
 
 			builder.HasKey(g => g.Id);
 			builder.HasIndex(g => g.Id).IsUnique();
+			builder.HasIndex(g => g.Code).IsUnique();
 
 			builder.Property(g => g.Id)
+				.ValueGeneratedOnAdd()
 				.HasColumnName("id")
 				.IsRequired();
 			builder.Property(g => g.Code)

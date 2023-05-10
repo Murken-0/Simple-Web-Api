@@ -6,7 +6,7 @@ using Users.Application.Common.Exceptions;
 
 namespace Users.Application.Users.Queries.GetOneUser
 {
-	internal class GetOneUserQueryHandler : IRequestHandler<GetOneUserQuery, User>
+	internal class GetOneUserQueryHandler : IRequestHandler<GetOneUserQuery, UserDto>
 	{
 		private readonly IUsersDbContext _dbContext;
 
@@ -15,15 +15,24 @@ namespace Users.Application.Users.Queries.GetOneUser
 			_dbContext = dbContext;
 		}
 
-		public async Task<User> Handle(GetOneUserQuery request, CancellationToken cancellationToken)
+		public async Task<UserDto> Handle(GetOneUserQuery request, CancellationToken cancellationToken)
 		{
 			var entity = await _dbContext.Users
-				.FirstOrDefaultAsync(u => u.Id == request.Id);
+				.Include(u => u.Group)
+				.Include(u => u.State)
+				.FirstOrDefaultAsync(u => u.Id == request.Id, cancellationToken);
 
 			if (entity == null) 
 				throw new NotFoundException(nameof(User), request.Id);
 
-			return entity;
+			return new UserDto()
+			{
+				Login = entity.Login,
+				Password = entity.Password,
+				CreationTime = entity.CreationTime,
+				GroupCode = entity.Group.Code,
+				StateCode = entity.State.Code
+			};
 		}
 	}
 }

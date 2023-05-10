@@ -1,10 +1,10 @@
 ﻿using MediatR;
 
 #nullable disable
-namespace Users.Application.Users.Commands.UpdateUser
+namespace Users.Application.Users.Commands.DeleteUser
 {
 	public class DaleteUserCommand : IRequest
 	{
-		public Guid Id { get; set; }
+		public int Id { get; set; }
     }
 }

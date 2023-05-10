@@ -12,7 +12,7 @@ namespace Users.Persistense
 		{
 			var connectionString = configuration.GetConnectionString("DefaultConnection");
 			services.AddDbContext<UsersDbContext>(options =>
-			{
+			{	
 				options.UseNpgsql(connectionString);
 			});
 			services.AddScoped<IUsersDbContext>(provider => 

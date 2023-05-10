@@ -12,7 +12,8 @@ namespace Users.Persistense
 		public DbSet<UserState> UserStates { get; set; }
 
 		public UsersDbContext(DbContextOptions<UsersDbContext> options)
-			: base(options) { }
+			: base(options) 
+		{ }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

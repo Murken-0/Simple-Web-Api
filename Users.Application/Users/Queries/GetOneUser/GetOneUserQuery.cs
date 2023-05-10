@@ -1,10 +1,9 @@
 ﻿using MediatR;
-using Users.Domain;
 
 namespace Users.Application.Users.Queries.GetOneUser
 {
-	public class GetOneUserQuery : IRequest<User>
+	public class GetOneUserQuery : IRequest<UserDto>
 	{
-		public Guid Id { get; set; }
+		public int Id { get; set; }
 	}
 }

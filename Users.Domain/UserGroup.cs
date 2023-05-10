@@ -3,10 +3,10 @@ namespace Users.Domain
 {
 	public class UserGroup
 	{
-		public enum Group
+		public enum Values
 		{
-			Admin,
-			User
+			Admin = 1,
+			User = 2
 		}
 
 		public int Id { get; set; }
