@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.Persistense", "Users.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.WebApi", "Users.WebApi\Users.WebApi.csproj", "{DB7C62DA-1F43-4D5C-8207-1B25A686A952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Users.Tests", "Users.Tests\Users.Tests.csproj", "{DE6262A0-4013-4399-BD52-D23547930FCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Users.Tests", "Users.Tests\Users.Tests.csproj", "{DE6262A0-4013-4399-BD52-D23547930FCD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

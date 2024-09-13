@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Users.Application.Common.Exceptions;
 using Users.Application.Users.Commands.CreateUser;
-using Users.Application.Users.Commands.DeleteUser;
-using Users.Application.Users.Queries.GetOneUser;
-using Users.Application.Users.Queries.GetUserList;
 using Users.Domain;
 using Users.Tests.Common;
 using Xunit;

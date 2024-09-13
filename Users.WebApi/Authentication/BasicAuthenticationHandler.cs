@@ -58,7 +58,7 @@ namespace Users.WebApi.Authentication
 		{
 			var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Login == login);
 
-			return user != null && user.Password == password;
+			return user != null && user.Password == password && user.StateId != (int)UserState.Values.Blocked;
 		}
 	}
 }

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.Extensions.Configuration;
 using Users.Application;
 using Users.Persistense;
 using Users.WebApi.Middleware;
@@ -33,16 +32,16 @@ namespace Users.WebApi
 
 			using (var scope = app.Services.CreateScope())
 			{
-				var servises = scope.ServiceProvider;
+				var provider = scope.ServiceProvider;
 
 				try
 				{
-					var context = servises.GetRequiredService<UsersDbContext>();
+					var context = provider.GetRequiredService<UsersDbContext>();
 					context.Database.EnsureCreated();
 				}
 				catch (Exception ex)
 				{
-					var logger = servises.GetRequiredService<ILogger<Program>>();
+					var logger = provider.GetRequiredService<ILogger<Program>>();
 					logger.LogError(ex, "An error occurred while creating the database.");
 				}
 			}
@@ -55,7 +54,6 @@ namespace Users.WebApi
 			app.MapControllers();
 
 			app.Run();
-			
 		}
 	}
 }
