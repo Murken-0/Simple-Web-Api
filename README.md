@@ -13,5 +13,5 @@ The project implements the following technologies:
     - Authentification (Basic)
     - Dependency Injection
 2. MediatR
-3. EntityFramework
+3. EntityFramework with LinQ
 4. XUnit
