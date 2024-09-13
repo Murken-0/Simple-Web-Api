@@ -1,8 +1,6 @@
 This is practice project. The main goal of it is to learn ASP.NET Core Web Api's.
 
-This project implements simple web api which works with User entity. 
-
-The project also has a layer structure, devided into the following layers:
+This project implements simple web api which works with User entity and has a layer structure, devided into the following layers:
 - Core (Domain, Application)
 - Infrastructure (Persistense)
 - Presentation (Web Api)
