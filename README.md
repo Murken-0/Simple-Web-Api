@@ -1,13 +1,19 @@
-# Тестовое задание для стажировки VK
-## Муравьев Владислав Романович
-### Реализовано все, кроме пагинации
-### Запускать проект Users.WebApi
-### Значения базы данных (c другими все поломается :\ )
- #### user_group:
-    1. id = 1, code = Admin
-    2. id = 2, code = User
- #### user_state:
-    1. id = 1, code = Active
-    2. id = 2, code = Blocked
-### А еще надо поменять ConnectionString в файле конфигурации :)
-## Приятного просмотра!
+This is practice project. The main goal of it is to learn ASP.NET Core Web Api's.
+
+This project implements simple web api which works with User entity. 
+
+The project also has a layer structure, devided into the following layers:
+- Core (Domain, Application)
+- Infrastructure (Persistense)
+- Presentation (Web Api)
+
+The project implements the following technologies:
+
+1. ASP.NET Core:
+    - API Controllers (async)
+    - Middlewares
+    - Authentification (Basic)
+    - Dependency Injection
+2. MediatR
+3. EntityFramework
+4. XUnit
