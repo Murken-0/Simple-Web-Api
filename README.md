@@ -1,6 +1,6 @@
-This is practice project. The main goal of it is to learn ASP.NET Core Web Api's.
+The main goal of it is to learn ASP.NET Core Web Api's.
 
-This project implements simple web api which works with User entity and has a layer structure, devided into the following layers:
+This project implements a WebAPI using the CQRS pattern, which works with a user entity and has a layered structure divided into the following layers::
 - Core (Domain, Application)
 - Infrastructure (Persistense)
 - Presentation (Web Api)
